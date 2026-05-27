@@ -189,7 +189,7 @@ public:
         cout << "Camas libres: " << obtenerDisponibilidad() << endl;
         cout << "Especialidades: ";
         for (int i = 0; i < (int)especialidades.size(); i++) {
-            cout << especialidades[i]; << endl;
+            cout << especialidades[i] << endl;
         }
         cout << "Pacientes actuales: " << pacientes.size() << endl;
         cout << "Turnos registrados: " << turnos.size() << endl;

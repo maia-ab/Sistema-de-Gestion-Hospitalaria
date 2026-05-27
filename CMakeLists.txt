@@ -10,4 +10,6 @@ add_executable(SistemaHospitalario
     src/Turno.cpp,
     src/Paciente.cpp,
     src/Medico.cpp,
+    src/Hospital.cpp
+    src/main.cpp
 )
