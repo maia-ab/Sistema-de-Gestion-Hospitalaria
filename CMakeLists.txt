@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(SistemaHospitalario)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include_directories(include)
+
+add_executable(SistemaHospitalario
+    src/Turno.cpp
+)
