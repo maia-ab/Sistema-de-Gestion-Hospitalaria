@@ -11,5 +11,7 @@ add_executable(SistemaHospitalario
     src/Paciente.cpp
     src/Medico.cpp
     src/Hospital.cpp
+    src/Especialidad.cpp
+    src/Diagnostico.cpp
     src/main.cpp
 )
