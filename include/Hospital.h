@@ -17,7 +17,8 @@ public:
     int capacidadCamas;
     int camasOcupadas;
     vector<string> especialidades;
-    int personalMedico;
+    int cantidadDeMedicos;
+    vector<Medico> personalMedico;
     double presupuestoAnual;
     vector<Paciente> pacientes;
     vector<Turno> turnos;
@@ -29,7 +30,8 @@ public:
              int camasOcupadas,
              vector<string> especialidades,
              vector<Turno> turnos,
-             int personalMedico,
+             int cantidadDeMedicos,
+             vector<Medico> personalMedico,
              double presupuestoAnual);
 
     void agregarPaciente(Paciente paciente);
@@ -41,6 +43,8 @@ public:
     int pacientesAtendidosDesde_Hasta_(string fechaDesde, string fechaHasta);
     bool estaSobrecargado(string fechaDesde, string fechaHasta, int maxIngresos);
     int pacientesIngresadosDesde_Hasta_(string fechaDesde, string fechaHasta);
+    void turnosDePaciente(int pacienteDNI);
+    void turnosDeMedico(int medicoID);
 };
 
 #endif

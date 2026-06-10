@@ -9,7 +9,8 @@ Hospital::Hospital(string codigo,
                    int camasOcupadas,
                    vector<string> especialidades,
                    vector<Turno> turnos,
-                   int personalMedico,
+                   int cantidadDeMedicos,
+                   vector<Medico> personalMedico,
                    double presupuestoAnual)
 {
     this->codigo = codigo;
@@ -20,6 +21,7 @@ Hospital::Hospital(string codigo,
     this->especialidades = especialidades;
     this->turnos = turnos;
     this->personalMedico = personalMedico;
+    this->cantidadDeMedicos = cantidadDeMedicos;
     this->presupuestoAnual = presupuestoAnual;
 }
 
@@ -102,6 +104,27 @@ int Hospital::pacientesIngresadosDesde_Hasta_(string fechaDesde, string fechaHas
         }
     }
 }
+void Hospital::turnosDePaciente(int pacienteDNI)
+{
+    for (Paciente &paciente : pacientes)
+    {
+        if (paciente.getDNI() == pacienteDNI)
+        {
+            return paciente.obtenerInfoTurnos();
+        }
+    }
+}
+
+void Hospital::turnosDeMedico(int medicoID)
+{
+    for (Medico &medico : personalMedico)
+    {
+        if (medico.getID() == medicoID)
+        {
+            return medico.obtenerInfoTurnos();
+        }
+    }
+}
 
 void Hospital::obtenerInfoHospital()
 {
@@ -109,9 +132,14 @@ void Hospital::obtenerInfoHospital()
     cout << "Nombre:" << nombre << endl;
     cout << "Ciudad:" << ciudad << endl;
     cout << "Capacidad camas: " << capacidadCamas << endl;
-    cout << "Personal medico: " << personalMedico << endl;
+    cout << "Cantidad de medicos: " << cantidadDeMedicos << endl;
     cout << "Presupuesto anual: " << presupuestoAnual << endl;
     cout << "Camas libres: " << obtenerDisponibilidad() << endl;
+    cout << "Personal Medico: ";
+    for (int i = 0; i < (int)personalMedico.size(); i++)
+    {
+        cout << personalMedico[i].nombre << endl;
+    }
     cout << "Especialidades: ";
     for (int i = 0; i < (int)especialidades.size(); i++)
     {

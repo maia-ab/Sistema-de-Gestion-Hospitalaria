@@ -27,9 +27,12 @@ public:
              string codigoHospital);
 
     void agregarTurno(Turno turno);
-    void obtenerTurnos();
+    void obtenerInfoTurnos();
+    vector<Turno> getTurnos() const;
     void obtenerInfoPaciente();
     string getFechaIngreso() const;
+    int getID() const;
+    int getDNI() const;
 };
 
 #endif

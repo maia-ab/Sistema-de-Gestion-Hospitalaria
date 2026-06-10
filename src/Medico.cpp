@@ -15,7 +15,7 @@ void Medico::agregarTurno(Turno turno)
     turnos.push_back(turno);
 }
 
-void Medico::obtenerTurnos()
+void Medico::obtenerInfoTurnos()
 {
     if (turnos.size() == 0)
     {
@@ -27,6 +27,16 @@ void Medico::obtenerTurnos()
     {
         turnos[i].obtenerInfoTurno();
     }
+}
+
+int Medico::getID() const
+{
+    return medicoID;
+}
+
+vector<Turno> Medico::getTurnos() const
+{
+    return turnos;
 }
 
 void Medico::obtenerInfoMedico()

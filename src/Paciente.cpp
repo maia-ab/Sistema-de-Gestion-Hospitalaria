@@ -20,7 +20,7 @@ void Paciente::agregarTurno(Turno turno)
     turnos.push_back(turno);
 }
 
-void Paciente::obtenerTurnos()
+void Paciente::obtenerInfoTurnos()
 {
     if (turnos.size() == 0)
     {
@@ -34,9 +34,25 @@ void Paciente::obtenerTurnos()
     }
 }
 
+vector<Turno> Paciente::getTurnos() const
+{
+    return turnos;
+}
+
+
 string Paciente::getFechaIngreso() const
 {
     return fechaIngreso;
+}
+
+int Paciente::getID() const
+{
+    return pacienteID;
+}
+
+int Paciente::getDNI() const
+{
+    return dni;
 }
 
 void Paciente::obtenerInfoPaciente()

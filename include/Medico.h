@@ -19,8 +19,10 @@ public:
            string especialidad);
 
     void agregarTurno(Turno turno);
-    void obtenerTurnos();
+    void obtenerInfoTurnos();
     void obtenerInfoMedico();
+    vector<Turno> getTurnos() const;
+    int getID() const;
 };
 
 #endif
