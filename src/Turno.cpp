@@ -8,7 +8,9 @@ Turno::Turno(int turnoID,
              int medicoID,
              std::string fechaTurno,
              std::string especialidad,
-             int duracionMin)
+             int duracionMin,
+             bool atendido,
+             bool cancelado)
 {
     this->turnoID = turnoID;
     this->pacienteID = pacienteID;
@@ -16,6 +18,8 @@ Turno::Turno(int turnoID,
     this->fechaTurno = fechaTurno;
     this->especialidad = especialidad;
     this->duracionMin = duracionMin;
+    this->atendido = atendido;
+    this->cancelado = cancelado;
 }
 
 void Turno::obtenerInfoTurno()

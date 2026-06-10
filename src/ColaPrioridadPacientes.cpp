@@ -95,13 +95,13 @@ void ColaPrioridadPacientes::bubbleDown(int indice)
         if (indiceDerecho < tamanio &&
             tieneUnaMayorPrioridad(heap[indiceDerecho], heap[indiceMasPequeno]))
         {
-            indiceMasPequeno = indiceDerecho;
+            indiceMasPequeño = indiceDerecho;
         }
 
-        if (indiceMasPequeno != indice)
+        if (indiceMasPequeño != indice)
         {
             swap(heap[indice], heap[indiceMasPequeno]);
-            indice = indiceMasPequeno;
+            indice = indiceMasPequeño;
         }
         else
         {
