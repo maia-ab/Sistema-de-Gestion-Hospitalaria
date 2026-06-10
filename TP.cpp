@@ -17,7 +17,7 @@ public:
     string especialidad;
     int duracionMin;
 
-    Turno(int turnoID, int pacienteID, int medicoID, string fechaTurno, string especialidad, int duracionMin) {
+    Turno(int turnoID, int pacienteID, int medicoID, string fechaTurno, string especialidad, int duracionMin, bool atendido = false, bool cancelado = false) {
         this->turnoID = turnoID;
         this->pacienteID = pacienteID;
         this->medicoID = medicoID;
