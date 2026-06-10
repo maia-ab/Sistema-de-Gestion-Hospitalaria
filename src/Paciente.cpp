@@ -11,6 +11,7 @@ Paciente::Paciente(int pacienteID, int dni, string fechaIngreso, string diagnost
     this->diagnostico = diagnostico;
     this->prioridad = prioridad;
     this->peso = peso;
+    this->ocupaCama = ocupaCama;
     this->codigoHospital = codigoHospital;
 }
 
@@ -31,6 +32,11 @@ void Paciente::obtenerTurnos()
     {
         turnos[i].obtenerInfoTurno();
     }
+}
+
+string Paciente::getFechaIngreso() const
+{
+    return fechaIngreso;
 }
 
 void Paciente::obtenerInfoPaciente()

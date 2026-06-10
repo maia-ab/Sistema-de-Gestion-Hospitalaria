@@ -15,6 +15,7 @@ public:
     string nombre;
     string ciudad;
     int capacidadCamas;
+    int camasOcupadas;
     vector<string> especialidades;
     int personalMedico;
     double presupuestoAnual;
@@ -25,6 +26,7 @@ public:
              string nombre,
              string ciudad,
              int capacidadCamas,
+             int camasOcupadas,
              vector<string> especialidades,
              vector<Turno> turnos,
              int personalMedico,
@@ -36,9 +38,9 @@ public:
     int obtenerDisponibilidad();
     bool tieneEspecialidad(string especialidad);
     void obtenerInfoHospital();
-    int pacientesAtendidosDesde_Hasta_(string fechaDesde,string fechaHasta);
-    bool estaSobrecargado();
-
+    int pacientesAtendidosDesde_Hasta_(string fechaDesde, string fechaHasta);
+    bool estaSobrecargado(string fechaDesde, string fechaHasta, int maxIngresos);
+    int pacientesIngresadosDesde_Hasta_(string fechaDesde, string fechaHasta);
 };
 
 #endif

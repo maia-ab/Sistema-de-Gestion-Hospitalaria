@@ -6,6 +6,7 @@ using namespace std;
 Hospital::Hospital(string codigo,
                    string nombre, string ciudad,
                    int capacidadCamas,
+                   int camasOcupadas,
                    vector<string> especialidades,
                    vector<Turno> turnos,
                    int personalMedico,
@@ -15,6 +16,7 @@ Hospital::Hospital(string codigo,
     this->nombre = nombre;
     this->ciudad = ciudad;
     this->capacidadCamas = capacidadCamas;
+    this->camasOcupadas = camasOcupadas;
     this->especialidades = especialidades;
     this->turnos = turnos;
     this->personalMedico = personalMedico;
@@ -23,6 +25,10 @@ Hospital::Hospital(string codigo,
 
 void Hospital::agregarPaciente(Paciente paciente)
 {
+    if (paciente.ocupaCama)
+    {
+        camasOcupadas++;
+    }
     pacientes.push_back(paciente);
 }
 
@@ -77,9 +83,25 @@ int Hospital::pacientesAtendidosDesde_Hasta_(string fechaDesde, string fechaHast
     }
 }
 
-bool Hospital::estaSobrecargado(){
-
+bool Hospital::estaSobrecargado(string fechaDesde,
+                                string fechaHasta,
+                                int maxIngresos)
+{
+    return (camasOcupadas > capacidadCamas * 0.9) || pacientesIngresadosDesde_Hasta_(fechaDesde, fechaHasta) > maxIngresos;
 };
+
+int Hospital::pacientesIngresadosDesde_Hasta_(string fechaDesde, string fechaHasta)
+{
+    int totalIngresados = 0;
+
+    for (const Paciente &paciente : pacientes)
+    {
+        if (paciente.getFechaIngreso() >= fechaDesde && paciente.getFechaIngreso() <= fechaHasta)
+        {
+            totalIngresados++;
+        }
+    }
+}
 
 void Hospital::obtenerInfoHospital()
 {

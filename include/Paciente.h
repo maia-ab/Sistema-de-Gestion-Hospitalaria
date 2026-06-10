@@ -15,6 +15,7 @@ public:
     string diagnostico;
     int prioridad;
     float peso;
+    bool ocupaCama;
     string codigoHospital;
     vector<Turno> turnos;
 
@@ -28,6 +29,7 @@ public:
     void agregarTurno(Turno turno);
     void obtenerTurnos();
     void obtenerInfoPaciente();
+    string getFechaIngreso() const;
 };
 
 #endif
