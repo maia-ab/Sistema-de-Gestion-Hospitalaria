@@ -59,7 +59,7 @@ void Hospital::eliminarPaciente(int pacienteID)
 
 int Hospital::obtenerDisponibilidad()
 {
-    return capacidadCamas - (int)pacientes.size();
+    return capacidadCamas - camasOcupadas;
 }
 
 bool Hospital::tieneEspecialidad(string especialidad)
@@ -83,6 +83,7 @@ int Hospital::pacientesAtendidosDesde_Hasta_(string fechaDesde, string fechaHast
             totalAtendidos++;
         }
     }
+    return totalAtendidos;
 }
 
 bool Hospital::estaSobrecargado(string fechaDesde,
