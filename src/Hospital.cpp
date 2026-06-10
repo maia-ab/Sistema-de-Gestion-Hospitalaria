@@ -7,6 +7,7 @@ Hospital::Hospital(string codigo,
                    string nombre, string ciudad,
                    int capacidadCamas,
                    vector<string> especialidades,
+                   vector<Turno> turnos,
                    int personalMedico,
                    double presupuestoAnual)
 {
@@ -15,6 +16,7 @@ Hospital::Hospital(string codigo,
     this->ciudad = ciudad;
     this->capacidadCamas = capacidadCamas;
     this->especialidades = especialidades;
+    this->turnos = turnos;
     this->personalMedico = personalMedico;
     this->presupuestoAnual = presupuestoAnual;
 }
@@ -61,6 +63,23 @@ bool Hospital::tieneEspecialidad(string especialidad)
     }
     return false;
 }
+
+int Hospital::pacientesAtendidosDesde_Hasta_(string fechaDesde, string fechaHasta)
+{
+    int totalAtendidos = 0;
+
+    for (const Turno &turno : turnos)
+    {
+        if (turno.getFecha() >= fechaDesde && turno.getFecha() <= fechaHasta)
+        {
+            totalAtendidos++;
+        }
+    }
+}
+
+bool Hospital::estaSobrecargado(){
+
+};
 
 void Hospital::obtenerInfoHospital()
 {

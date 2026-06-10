@@ -27,3 +27,8 @@ void Turno::obtenerInfoTurno()
     cout << "Especialidad: " << especialidad << endl;
     cout << "Duracion: " << duracionMin << " minutos." << endl;
 }
+
+string Turno::getFecha() const
+{
+  return fechaTurno;
+}

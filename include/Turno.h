@@ -22,6 +22,7 @@ public:
           int duracionMin);
 
     void obtenerInfoTurno();
+    string getFecha() const;
 };
 
-#endif
+#endif;
