@@ -19,7 +19,9 @@ public:
           int medicoID,
           string fechaTurno,
           string especialidad,
-          int duracionMin);
+          int duracionMin,
+          bool atendido = false,
+          bool cancelado = false);
 
     void obtenerInfoTurno();
     string getFecha() const;
